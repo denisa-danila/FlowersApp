@@ -5,6 +5,8 @@ const userRouter = require("./api/routes/userRoutes");
 const app = express();
 connectDB();
 
+const setupSwaggerDocs = require("./swagger/swaggerUI");
+setupSwaggerDocs(app);
 
 app.use(express.json());
 app.use("/api/users", userRouter);
